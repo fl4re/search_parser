@@ -1,0 +1,523 @@
+[
+
+    {
+        "query": "test",
+        "output": {
+            "type": "word",
+            "value": "test"
+        }
+    },
+
+    {
+        "query": "kind: file",
+        "output": { 
+            "type": "kind", 
+            "value": "file" 
+        }
+    },
+
+    {
+        "query": "test kind: file",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "kind", 
+                    "value": "file" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test mime: application/json",
+        "output": {
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "mime", 
+                    "value": "application/json" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test created: 2016-10-19T06:19:38.220Z",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "created", 
+                    "value": "2016-10-19T06:19:38.220Z" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test modified: 2016-10-19T06:19:38.220Z",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "modified", 
+                    "value": "2016-10-19T06:19:38.220Z" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test extension: json",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "extension", 
+                    "value": "json" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test depth: 2",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "depth", 
+                    "value": "2" 
+                } 
+            ] 
+        }
+    },
+
+    {
+        "query": "test size:< 158",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "size", 
+                    "operator": "<",
+                    "value": "158" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test size:> 158",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "size", 
+                    "operator": ">",
+                    "value": "158" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test size:>= 158",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "size", 
+                    "operator": ">=",
+                    "value": "158" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test size:<= 158",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "size", 
+                    "operator": "<=",
+                    "value": "158" 
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test size:.. 158 159",
+        "output": { 
+            "type": "and",
+            "values": [ 
+                { 
+                    "type": "word", 
+                    "value": "test" 
+                },
+                { 
+                    "type": "size", 
+                    "operator": "..",
+                    "value": "158..159" 
+                }
+            ]
+        }
+    },
+
+
+    {
+        "query": "hello AND world kind: file",
+        "output": {
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "hello"
+                },
+                {
+                    "type": "word",
+                    "value": "world"
+                },
+                {
+                    "type": "kind",
+                    "value": "file"
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "hello AND world kind: file",
+        "output": {
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "hello"
+                },
+                {
+                    "type": "word",
+                    "value": "world"
+                },
+                {
+                    "type": "kind",
+                    "value": "file"
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "hello OR world kind: file",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "hello"
+                },
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "word",
+                            "value": "world"
+                        },
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "hello OR world kind: file AND test size:< 30",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "hello"
+                },
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "word",
+                            "value": "world"
+                        },
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        },
+                        {
+                            "type": "word",
+                            "value": "test"
+                        },
+                        {
+                            "type": "size",
+                            "value": "30",
+                            "operator": "<"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "(hello kind: directory OR world kind: file) AND test mime: application/json",
+        "output": {
+            "type": "and",
+            "values": [
+                {
+                    "type": "or",
+                    "values": [
+                        {
+                            "type": "and",
+                            "values": [
+                                {
+                                    "type": "word",
+                                    "value": "hello"
+                                },
+                                {
+                                    "type": "kind",
+                                    "value": "directory"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "and",
+                            "values": [
+                                {
+                                    "type": "word",
+                                    "value": "world"
+                                },
+                                {
+                                    "type": "kind",
+                                    "value": "file"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "mime",
+                    "value": "application/json"
+                }
+            ]
+        }
+    },
+
+
+    {
+        "query": "(hello kind: directory OR world kind: file) AND test mime: application/json OR NOT kind: directory",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "or",
+                            "values": [
+                                {
+                                    "type": "and",
+                                    "values": [
+                                        {
+                                            "type": "word",
+                                            "value": "hello"
+                                        },
+                                        {
+                                            "type": "kind",
+                                            "value": "directory"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "and",
+                                    "values": [
+                                        {
+                                            "type": "word",
+                                            "value": "world"
+                                        },
+                                        {
+                                            "type": "kind",
+                                            "value": "file"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "word",
+                            "value": "test"
+                        },
+                        {
+                            "type": "mime",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "not",
+                            "values": [
+                                {
+                                    "type": "kind",
+                                    "value": "directory"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test OR kind: file",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "kind",
+                    "value": "file"
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT (kind: file)",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT kind: file",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT (bar kind: file)",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "and",
+                            "values": [
+                                {
+                                    "type": "word",
+                                    "value": "bar"
+                                },
+                                {
+                                    "type": "kind",
+                                    "value": "file"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+
+]

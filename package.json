@@ -1,0 +1,25 @@
+{
+  "name": "search_parser",
+  "version": "0.1.2",
+  "description": "Parse a search query string to produce a json representation. https://docs.google.com/document/d/1jca1EKI4C13PzzjfIEMZ9-zPy0Uiv4MH7PjuSHm1pXg",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fl4re/search_parser.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fl4re/search_parser/issues"
+  },
+  "homepage": "https://github.com/fl4re/search_parser#readme",
+  "dependencies": {
+    "logic-query-parser": "https://github.com/AnyFetch/logic-query-parser#not"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
+  }
+}
