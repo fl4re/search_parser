@@ -9,6 +9,14 @@
     },
 
     {
+        "query": "kind: file",
+        "output": { 
+            "type": "kind", 
+            "value": "file" 
+        }
+    },
+
+    {
         "query": "test kind: file",
         "output": { 
             "type": "and",

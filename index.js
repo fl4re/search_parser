@@ -35,6 +35,9 @@ module.exports = (query, macro_regex) => {
     }
     if (query.values) {
         query.values =  parse_macros(query.values);
+        if (query.values.length === 1) {
+            query = query.values[0];
+        }
     }
     if (query.type === "string") {
         query.type = "word";
