@@ -26,6 +26,9 @@ module.exports = (query, macro_regex) => {
                 }
             } else if (element.values) {
                 element.values = parse_macros(element.values);
+                if (element.values.length === 1) {
+                    values[index] = element.values[0];
+                }
             }
         });
         return values;
