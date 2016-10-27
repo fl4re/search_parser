@@ -4,7 +4,8 @@
   "description": "Parse a search query string to produce a json representation. https://docs.google.com/document/d/1jca1EKI4C13PzzjfIEMZ9-zPy0Uiv4MH7PjuSHm1pXg",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "build": "npm test"
   },
   "repository": {
     "type": "git",
