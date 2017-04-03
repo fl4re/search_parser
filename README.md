@@ -9,7 +9,7 @@ It aims to support what is specified in this [document](https://docs.google.com/
 
 ## Usage
 
-```
+```javascript
 const search_parser = require("search_parser");
 //macro regular expression to catch specific keywords and eventual operators
 const macro_regex = /^(kind|mime|created|modified|extension|size|depth):(<=?|>=?|\.\.)?$/;
