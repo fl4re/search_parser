@@ -6,7 +6,7 @@ const parser = require('logic-query-parser');
 module.exports = (query, macro_regex) => {
     const binaryTree = parser.parse(query);
     query = parser.utils.binaryTreeToQueryJson(binaryTree);
-    const parse_macros = (values, next) => {
+    const parse_macros = values => {
         values.forEach((element, index) => {
             if (element.type === "string") {
                 let match = element.value.match(macro_regex);

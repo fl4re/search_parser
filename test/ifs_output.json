@@ -358,6 +358,166 @@
                 }
             ]
         }
+    },
+
+
+    {
+        "query": "(hello kind: directory OR world kind: file) AND test mime: application/json OR NOT kind: directory",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "or",
+                            "values": [
+                                {
+                                    "type": "and",
+                                    "values": [
+                                        {
+                                            "type": "word",
+                                            "value": "hello"
+                                        },
+                                        {
+                                            "type": "kind",
+                                            "value": "directory"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "and",
+                                    "values": [
+                                        {
+                                            "type": "word",
+                                            "value": "world"
+                                        },
+                                        {
+                                            "type": "kind",
+                                            "value": "file"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "word",
+                            "value": "test"
+                        },
+                        {
+                            "type": "mime",
+                            "value": "application/json"
+                        }
+                    ]
+                },
+                {
+                    "type": "and",
+                    "values": [
+                        {
+                            "type": "not",
+                            "values": [
+                                {
+                                    "type": "kind",
+                                    "value": "directory"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test OR kind: file",
+        "output": {
+            "type": "or",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "kind",
+                    "value": "file"
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT (kind: file)",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT kind: file",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "kind",
+                            "value": "file"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    {
+        "query": "test AND NOT (bar kind: file)",
+        "output": { 
+            "type": "and",
+            "values": [
+                {
+                    "type": "word",
+                    "value": "test"
+                },
+                {
+                    "type": "not",
+                    "values": [
+                        {
+                            "type": "and",
+                            "values": [
+                                {
+                                    "type": "word",
+                                    "value": "bar"
+                                },
+                                {
+                                    "type": "kind",
+                                    "value": "file"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     }
 
 ]
