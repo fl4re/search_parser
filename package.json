@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/fl4re/search_parser#readme",
   "dependencies": {
-    "logic-query-parser": "0.0.5"
+    "logic-query-parser": "https://github.com/AnyFetch/logic-query-parser#not"
   },
   "devDependencies": {
     "mocha": "^3.1.2",
